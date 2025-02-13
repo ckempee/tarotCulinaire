@@ -87,7 +87,46 @@ async function toggle() {
         divInterpretation.innerHTML = '';
     }
 }
+// fonction chatgpt qui me permet de générer un texte en lui donnant mes 3 cartes yeaaaaaah j'ai réussit!!!
+async function getChatGPTInterpretation(cards) {
+    showLoadingBalls();
+    const apiKey = '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';
+    const url = 'https://api.openai.com/v1/chat/completions';
 
+    const messages = [
+        {"role": "system", "content": "Tu es un assistant utile pour l'interprétation des tarots culinaires afin de donner des prédictions."},
+        {"role": "user", "content": `Voici trois cartes de tarot culinaire avec leurs significations :
+1. ${cards[0].nom} : ${cards[0].signification}
+2. ${cards[1].nom} : ${cards[1].signification}
+3. ${cards[2].nom} : ${cards[2].signification}
+        
+Fournis une interprétation détaillée et personnalisée de ces trois cartes en faisant des liens entre elles, en proposant par exemple des menus de la semaine, des types d'aliments que l'utilisateur pourrait manger en fonction des cartes tirés, de quoi son corps à besoin. 
+Il s'agit d'une prédiction, c'est-à-dire: La méthode de tirage des cartes de tarot pour faire des prédictions culinaires offre des réponses précises à vos questions sur la cuisine. Que ce soit pour des idées de menus, des conseils pour améliorer vos compétences ou des suggestions d'ingrédients, ce tirage fournit des informations claires et ciblées pour enrichir votre expérience culinaire.
+Je veux que tu fasses comme si c'était moi qui parlait afin que les gens ne se doutent pas qu'il s'agit d'un texte généré par chatgpt donc pas de 'bien sur' etc. 
+Je veux aussi que tu ne coupe pas le texte au milieu d'une phrase.`}
+    ];
+
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({
+            model: 'gpt-3.5-turbo',
+            messages: messages,
+            max_tokens: 500
+        })
+    });
+
+    if (!response.ok) {
+        throw new Error('Erreur lors de la communication avec l\'API OpenAI');
+    }
+
+    const data = await response.json();
+    hideLoadingBalls(); // Cette ligne est déplacée ici pour être exécutée après la réponse de l'API
+    return data.choices[0].message.content.trim();
+}
 
 
 // Fonction pour recommencer
