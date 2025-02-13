@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="navbar">
+        <nav>
+            
+           
+            <div class="navlink">
+                <ul>
+                    <li><a href="./index.html" >Accueil</a></li>
+                    <li><a href="./tirage.html" class="active">Tirage</a></li>
+                    <li><a href="./about.html">A propos</a></li>
+                    <li> <a href="./contact.html">Contact</a></li>
+                </ul> 
+            </div>
+            <div class="logo">
+                <img src="./images/logo.jpg" alt="">
+            </div>
+
+        </nav>
+    </div>
+
+
+    <div class="tarot" id="blur">
+    <div class="carteChoisies">
+        <div class="carteChoisie" id="choisie1" onclick="returnCard(this)"></div>
+        <div class="carteChoisie" id="choisie2" onclick="returnCard(this)"></div>
+        <div class="carteChoisie" id="choisie3" onclick="returnCard(this)"></div>
+    </div>
+    <div class="choixCartes">
+        <div class="cards" onclick="moveCard(this)">
+            
+                <img src="./images/carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./images/carteTarots.jpg" alt="" class="back">
+            <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./images/carteTarots.jpg" alt="" class="back">
+            <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./images/carteTarots.jpg" alt="" class="back">
+            <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./images/carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./images/carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./images/carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./images/carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./images/carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./images/carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./images/carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./images/carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./images/carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./images/carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./images/carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./images/carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./images/carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./images/carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./images/carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./images/carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./images/carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+        <div class="cards" onclick="moveCard(this)">
+            <img src="./images/carteTarots.jpg" alt="" class="back">
+                <img src="" alt="" class="front">
+        </div>
+       
+        
+    </div>
+    
+</div>
+
+<div id="popUp">
+    <i class="fa-solid fa-xmark fa-2xl" onclick="toggle()"></i>
+    <h1>Votre Tirage</h1>
+    <div class="interpretationCartes">
+        <!-- Contenu de l'interprétation des cartes -->
+    </div>
+    <div class="loading-container">
+        
+        <div class="loading-ball" id="ball1"></div>
+        <div class="loading-ball" id="ball2"></div>
+        <div class="loading-ball" id="ball3"></div>
+    </div>
+    <div class="resultat">
+        <!-- Contenu généré par ChatGPT -->
+        <!-- Ceci sera ajouté dynamiquement une fois que le texte est généré -->
+    </div>
+    <a href="./tirage.html" class="recommencer"> 
+        <button> Recommencer </button>
+    </a>
+</div>
+<script type="'module" src="./chatgpt.js"></script>
+<script src="./script2.js"></script>
+    <script src="./scriptcreativity.js"></script>
+    
+    
+</body>
+</html>
