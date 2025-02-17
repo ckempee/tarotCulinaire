@@ -86,7 +86,7 @@ async function toggle() {
 // fonction chatgpt qui me permet de générer un texte en lui donnant mes 3 cartes yeaaaaaah
 async function getChatGPTInterpretation(cards) {
     showLoadingBalls();
-    const apiKey = 'sk-proj-SzndVpPFodBKE0GShgd4T3BlbkFJqGAvcF6CErevYbaEjbEL';
+    const apiKey = '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';
     const url = 'https://api.openai.com/v1/chat/completions';
 
     const messages = [
